@@ -1,0 +1,4 @@
+((fun (inc x) (add1 x))
+ (fun (double x) (+ x x))
+ (fun (f x) (double (inc x)))
+ (f 4))

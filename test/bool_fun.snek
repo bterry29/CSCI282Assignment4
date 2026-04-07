@@ -1,0 +1,2 @@
+((fun (truth) true)
+ (truth))

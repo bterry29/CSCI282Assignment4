@@ -1,0 +1,5 @@
+((fun (sumto n)
+   (if (= n 0)
+       0
+       (+ n (sumto (sub1 n)))))
+ (sumto 4))

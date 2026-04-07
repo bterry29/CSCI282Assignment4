@@ -1,0 +1,9 @@
+((fun (ping n)
+   (if (= n 0)
+       0
+       (pong (sub1 n))))
+ (fun (pong n)
+   (if (= n 0)
+       1
+       (ping (sub1 n))))
+ (ping 3))

@@ -1,0 +1,7 @@
+((fun (g x)
+   (let ((y 2))
+     (+ x y)))
+ (fun (f x)
+   (let ((z 3))
+     (+ (g x) z)))
+ (f 4))
