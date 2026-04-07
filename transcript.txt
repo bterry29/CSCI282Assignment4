@@ -1,0 +1,104 @@
+TEST #1
+
+42
+make: `test/example.run' is up to date.
+section .text
+global our_code_starts_here
+our_code_starts_here:
+  mov rax, 42
+  ret
+42
+
+TEST #2
+
+(add1 5)
+make: `test/add1.run' is up to date.
+section .text
+global our_code_starts_here
+our_code_starts_here:
+  mov rax, 5
+add rax, 1
+  ret
+6
+
+TEST #3
+
+(negate 7)
+make: `test/negate.run' is up to date.
+section .text
+global our_code_starts_here
+our_code_starts_here:
+  mov rax, 7
+imul rax, -1
+  ret
+-7
+
+TEST #4
+
+(negate(sub1 0))
+make: `test/neg_to_pos.run' is up to date.
+section .text
+global our_code_starts_here
+our_code_starts_here:
+  mov rax, 0
+sub rax, 1
+imul rax, -1
+  ret
+1
+
+TEST #5
+
+(negate 0)
+make: `test/negate0.run' is up to date.
+section .text
+global our_code_starts_here
+our_code_starts_here:
+  mov rax, 0
+imul rax, -1
+  ret
+0
+
+TEST #6
+
+(negate (negate 5))
+make: `test/dub_neg.run' is up to date.
+section .text
+global our_code_starts_here
+our_code_starts_here:
+  mov rax, 5
+imul rax, -1
+imul rax, -1
+  ret
+5
+
+TEST #7
+
+(add1 10000000)
+make: `test/large_num.run' is up to date.
+section .text
+global our_code_starts_here
+our_code_starts_here:
+  mov rax, 10000000
+add rax, 1
+  ret
+10000001
+
+TEST #8
+
+(sub1(sub1(sub1(sub1(add1 15)))))
+make: `test/complex.run' is up to date.
+section .text
+global our_code_starts_here
+our_code_starts_here:
+  mov rax, 15
+add rax, 1
+sub rax, 1
+sub rax, 1
+sub rax, 1
+sub rax, 1
+  ret
+12
+
+TEST #9
+
+
